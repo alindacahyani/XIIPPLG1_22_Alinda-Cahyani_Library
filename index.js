@@ -1,6 +1,7 @@
 const express = require('express'); // Mengimpor framework Express.js
 const bodyParser = require('body-parser'); // Middleware untuk mengelola request body
 const loansRoutes = require('./routes/loans'); // Mengimpor router review
+const booksRoutes = require('./routes/books'); // Mengimpor router review
 
 const app = express(); // Membuat instance aplikasi Express
 const port = 5000; // Menentukan port server
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
 
 // Menggunakan route untuk review, semua request dengan prefix '/reviews' akan diarahkan ke reviewsRoutes
 app.use('/loans', loansRoutes);
+app.use('/books', booksRoutes);
 
 // Menjalankan server dan mendengarkan request pada port yang telah ditentukan
 app.listen(port, () => {
